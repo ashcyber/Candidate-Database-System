@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+        <style>
+            .container-full{
+                background-color: #fff;
+            }
+
+            h1 {
+                color: #42a0da;
+            }
+
+            .btn-primary{
+                color: #42a0da;
+                font-weight: bold;
+                background-color: #fff;
+                border-color: #42a0da;
+            }
+
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+                color: #fff;
+                background-color: #42a0da;
+                border-color: #42a0da;
+            }
+            .nav>li{
+                color: #fff;
+            }
+            .nav>li>a:hover, .nav>li>a:focus {
+                text-decoration: none;
+                background-color: #42a0da;
+                color: #0c487b;
+            }
+
+            a{
+                color: #fff;
+            }
+
+            .link_text1{
+                font-weight: bold;
+                font-size: 25px;
+            }
+
+            .link_text{
+                font-size: 18px;
+                font-weight: bold;
+                padding-left: 30px;
+            }
+
+            hr.style {
+                border-top: 3px solid #4279a9;
+                width: 4%;
+            }
+        </style>
+    </head>
+
+    <body>
+         <nav class="navbar navbar-dark bg-primary" style="background-color: #42a0da;">
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="http://localhost/search.html"><p class="link_text1">XYZDB</p></a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="http://localhost/search.html"><p class="link_text">Search Candidates</p></a></li>
+                    <li><a href="http://localhost/addCandidates.php"><p class="link_text">Add Candidates</p></a></li>
+                    <li><a href="http://localhost/summary_sheet_creator.php"><p class="link_text">Summary Sheet</p></a></li>
+                    <li><a href="http://localhost/uploadCV.php"><p class="link_text">Resume Upload</p></a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-full">
+          <div class="row">
+            <div class="col-lg-12 text-center v-center">
+              <br><br><br>
+              <h1>Search Candidates</h1>
+              <hr class="style"><br>
+              <form class="col-lg-12" enctype="multipart/form-data" method="GET" action="http://localhost/searchCandidates.php">
+                <div class="input-group" style="width:540px;text-align:center;margin:0 auto;">
+                <input type="text" class="form-control input-lg" placeholder="Enter Job Function"  name="search">
+                </div>
+                <br>
+
+                <div class="input-group" style="width:540px;text-align:center;margin:0 auto;">
+                <input class="form-control input-lg" id="exclude_word" name="exclude_word" placeholder="Enter Words to Exclude" type="text">
+                </div>
+
+                <br>
+
+                <div class="input-group" style="width:540px;text-align:center;margin:0 auto;">
+                <input class="form-control input-lg"  id="exact_word" name="exact_word" placeholder="Enter Exact Pharse or Word" type="text">
+                </div>
+
+                <br>
+
+                <select class="c-select" style="width:266px;height:40px;margin-left:2px; padding-left:15px;font-size:16px;color:#948e8e;font-weight:normal" id="filter" name="filter">
+                    <option value="1">Sort By Date Modified</option>
+                    <option value="2">Sort By Experience</option>
+                    <option value="3">Sort By Salary</option>
+                </select>
+
+
+                  <select class="c-select" style="width:265px;height:40px;margin-left:5px; padding-left:15px;font-size:16px;color:#948e8e;font-weight:normal" id="db" name="db">
+                    <option value="emaildb">EmailDB</option>
+                    <option value="extradb">ExtraDB</option>
+                    <option value="giridb2">GiriDB</option>
+
+                  </select>
+
+                  <br><br>
+                <select class="c-select" style="width:542px;height:40px;margin-left:5px; padding-left:15px;font-size:16px;color:#948e8e;font-weight:normal" id="search_key" name="search_key">
+                    <option value="1">Search must Contain ALL of the words.</option>
+                    <option value="2">Search may Contain ANY of the words.</option>
+                </select>
+                  <br><br>
+                <button style="padding:6px 242px;border-radius:0px"; type="submit" class="btn btn-primary"><h4 class="btn-text">Search</h4></button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
